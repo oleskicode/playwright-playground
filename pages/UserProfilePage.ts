@@ -14,6 +14,11 @@ export class UserProfilePage {
   }
 
   async verifyPageElements() {
+    const userName = process.env.USER_NAME!;
+    await expect(this.page).toHaveURL(
+      new RegExp(`@${userName.toLowerCase()}(/)?$`),
+    );
+
     await expect(this.editProfileSettings).toBeEnabled();
   }
 }
