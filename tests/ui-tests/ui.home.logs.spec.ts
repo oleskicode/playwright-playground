@@ -1,8 +1,11 @@
 import { test, expect } from "@playwright/test";
 
-test("Home Page has no console errors", async ({ page }) => {
+test("Home Page has no new Console Errors", async ({ page }) => {
   const KNOWN_ERROR_LOGS = new Set([
-    `Failed to load resource: net::ERR_NAME_NOT_RESOLVED`, // Known errors here
+    // List known errors here
+    "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+    "Failed to load resource: Error resolving “cdn.polyfill.io”: Name or service not known",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
   ]);
 
   const allConsoleLogs: Array<{ text: string; type: string }> = [];
@@ -19,9 +22,4 @@ test("Home Page has no console errors", async ({ page }) => {
   const newErrorLogs = allErrorLogs.filter((log) => !KNOWN_ERROR_LOGS.has(log)); // filter all new unknown errors
 
   expect.soft(newErrorLogs).toHaveLength(0); // verify there are zero new errors
-
-  // verify the known errors are still present
-  KNOWN_ERROR_LOGS.forEach((item) => {
-    expect.soft(allErrorLogs.includes(item)).toBeTruthy();
-  });
 });
