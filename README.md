@@ -16,7 +16,7 @@ Every push triggers the full suite via GitHub Actions, with the HTML report publ
 
 **🔗 [View the latest test report](https://oleskicode.github.io/Playwright-Typescript-with-GitHubActions-conduit-oleski/)**
 
-The report includes full traces, screenshots, and step-by-step breakdowns for every run, across all projects (`chromium-desktop`, `chromium-pixel7`, `webkit-iphone15pro`) — always reflecting the most recent commit on `master`.
+The report includes full traces, screenshots, and step-by-step breakdowns for every run, across all projects (`chromium-desktop`, `chromium-pixel9`, `webkit-iphone16`) — always reflecting the most recent commit on `master`.
 
 ---
 
@@ -93,7 +93,7 @@ docker compose build
 docker compose run --rm tests
 ```
 
-This spins up a container that runs `globalSetup` (registering the test user via the API, fetching an auth token, and seeding `localStorage`), then executes all 60 tests across the `chromium-desktop`, `chromium-pixel7`, and `webkit-iphone15pro` projects.
+This spins up a container that runs `globalSetup` (registering the test user via the API, fetching an auth token, and seeding `localStorage`), then executes all 60 tests across the `chromium-desktop`, `chromium-pixel9`, and `webkit-iphone16` projects.
 
 3. **View results:**
 

@@ -2,10 +2,11 @@ import { test, expect } from "@playwright/test";
 
 test("Home Page has no new Console Errors", async ({ page }) => {
   const KNOWN_ERROR_LOGS = new Set([
-    // List known errors here
+    // List known errors here:
     "Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
     "Failed to load resource: Error resolving “cdn.polyfill.io”: Name or service not known",
     "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: A server with the specified hostname could not be found.",
   ]);
 
   const allConsoleLogs: Array<{ text: string; type: string }> = [];
