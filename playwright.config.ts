@@ -23,18 +23,18 @@ export default defineConfig({
       name: "chromium-desktop",
       use: { ...devices["Desktop Chrome"] },
     },
-    // Chromium engine, Pixel 7 viewport/UA
+    // Chromium engine, Pixel 9 viewport/UA
     {
-      name: "chromium-pixel7",
+      name: "chromium-pixel9",
       use: {
-        ...devices["Pixel 7"],
+        ...devices["Pixel 9"],
       },
     },
-    // WebKit engine, iPhone 15 Pro viewport/UA
+    // WebKit engine, iPhone 16 viewport/UA
     {
-      name: "webkit-iphone15pro",
+      name: "webkit-iphone16",
       use: {
-        ...devices["iPhone 15 Pro"],
+        ...devices["iPhone 16"],
       },
     },
   ],
